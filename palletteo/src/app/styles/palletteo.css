@@ -2195,7 +2195,6 @@ body {
 }
 /* src/app/styles/EntryEditor.css */
 .entry-editor {
-  max-width: 1400px;
   margin: 0 auto;
   background: var(--background);
   border-radius: 12px;
