@@ -1,7 +1,5 @@
 /* Admin.css - Complete Admin Panel Styles */
-
 /* ===== AUTH COMPONENTS ===== */
-
 /* Admin Login */
 .admin-login {
   display: flex;
@@ -220,7 +218,6 @@
 }
 
 /* ===== DASHBOARD COMPONENTS ===== */
-
 /* Admin Dashboard */
 .admin-dashboard {
   min-height: 100vh;
@@ -479,7 +476,6 @@
 }
 
 /* ===== USER MANAGEMENT ===== */
-
 /* User Management */
 .user-management {
   padding: 1.5rem;
@@ -648,7 +644,6 @@
 }
 
 /* ===== USER INFO ===== */
-
 /* Admin User Info */
 .admin-user-info {
   display: flex;
@@ -722,7 +717,6 @@
 }
 
 /* ===== CONNECTION MANAGEMENT ===== */
-
 /* Connection Cards */
 .connections-grid {
   display: grid;
@@ -798,7 +792,6 @@
 }
 
 /* ===== SETTINGS ===== */
-
 /* Settings Page */
 .settings-section {
   margin-bottom: 2rem;
@@ -874,7 +867,6 @@
 }
 
 /* ===== BUTTONS ===== */
-
 /* Button Styles */
 .btn-primary {
   background: var(--accent-color);
@@ -959,7 +951,6 @@
 }
 
 /* ===== LOADING & EMPTY STATES ===== */
-
 /* Loading States */
 .admin-loading {
   display: flex;
@@ -984,13 +975,12 @@
     transform: rotate(360deg);
   }
 }
-
 /* Empty State */
 .empty-state {
   text-align: center;
   padding: 2rem;
   color: var(--muted);
-  grid-column: 1 / -1;
+  grid-column: 1/-1;
 }
 
 .empty-state p {
@@ -999,102 +989,82 @@
 }
 
 /* ===== RESPONSIVE DESIGN ===== */
-
 @media (max-width: 768px) {
   .admin-header {
     flex-direction: column;
     gap: 1rem;
     align-items: flex-start;
   }
-
   .admin-header__left {
     flex-direction: column;
     gap: 1rem;
     align-items: flex-start;
   }
-
   .admin-nav {
     width: 100%;
   }
-
   .admin-nav button {
     flex: 1;
     text-align: center;
   }
-
   .admin-stats {
     grid-template-columns: 1fr;
   }
-
   .dashboard-sections {
     grid-template-columns: 1fr;
   }
-
   .connection-item {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
   }
-
   .connection-actions {
     width: 100%;
     justify-content: flex-end;
   }
-
   .connections-grid {
     grid-template-columns: 1fr;
   }
-
   .connection-card__actions {
     flex-direction: column;
   }
-
   .user-actions {
     flex-direction: column;
     width: 100%;
   }
-
   .admin-content__header {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
   }
-
   .table-header,
   .table-row {
     grid-template-columns: 1fr;
     gap: 0.5rem;
   }
-
   .table-header {
     display: none;
   }
-
   .table-row {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 1.5rem 1rem;
   }
-
   .user-actions {
     width: 100%;
     justify-content: flex-start;
     margin-top: 1rem;
   }
-
   .user-stats {
     grid-template-columns: 1fr;
   }
-
   .user-filters {
     flex-direction: column;
   }
-
   .setting-actions {
     flex-direction: column;
   }
-
   .account-detail,
   .info-item {
     flex-direction: column;
@@ -1102,28 +1072,22 @@
     gap: 0.5rem;
   }
 }
-
 /* ===== DARK MODE ===== */
-
 @media (prefers-color-scheme: dark) {
   .health-item,
   .account-detail,
   .info-item {
     background: rgba(255, 255, 255, 0.05);
   }
-
   .admin-user-info {
     background: rgba(255, 255, 255, 0.05);
   }
-
   .user-management .warning {
     background: rgba(245, 158, 11, 0.15);
   }
-
   .table-header {
     background: rgba(255, 255, 255, 0.05);
   }
-
   .table-row:hover {
     background: rgba(255, 255, 255, 0.02);
   }

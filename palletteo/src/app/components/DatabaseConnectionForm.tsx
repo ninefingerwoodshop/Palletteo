@@ -50,7 +50,7 @@ export default function DatabaseConnectionForm({
         config
       );
       if (success) {
-        alert("✅ Connection test successful!");
+        alert("Connection test successful!");
       } else {
         setError("Connection test failed. Please check your configuration.");
       }
@@ -402,12 +402,12 @@ export default function DatabaseConnectionForm({
       <div className="database-info">
         <h3>Why Connect a Database?</h3>
         <ul>
-          <li>🎨 Store unlimited color palettes</li>
-          <li>🗂️ Organize palettes into collections</li>
-          <li>👥 Share with your team</li>
-          <li>📤 Export design tokens</li>
-          <li>🔒 Keep your data secure</li>
-          <li>🔄 Sync across devices</li>
+          <li>Store unlimited color palettes</li>
+          <li>Organize palettes into collections</li>
+          <li>Share with your team</li>
+          <li>Export design tokens</li>
+          <li>Keep your data secure</li>
+          <li>Sync across devices</li>
         </ul>
       </div>
     </div>

@@ -1,13 +1,6 @@
 import { Inter, JetBrains_Mono } from "next/font/google";
 import type { Metadata } from "next";
-import "./globals.css";
-import "./styles/themes.css";
-import "./styles/TopNav.css";
-import "./styles/LeftNav.css";
-import "./styles/RightNav.css";
-import "./styles/PaletteEditor.css"; // New styles needed
-import "./styles/StyleGuideViewer.css"; // New styles needed
-import "./styles/FirebaseConnection.css";
+import "./styles/palletteo.css";
 
 const inter = Inter({
   subsets: ["latin"],

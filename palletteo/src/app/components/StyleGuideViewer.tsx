@@ -88,9 +88,9 @@ export default function StyleGuideViewer() {
       <div className="export-section">
         <h2>Export Design Tokens</h2>
         <div className="export-options">
-          <button className="export-btn">📋 Copy CSS Variables</button>
-          <button className="export-btn">📄 Download JSON</button>
-          <button className="export-btn">🎨 Export Figma</button>
+          <button className="export-btn">Copy CSS Variables</button>
+          <button className="export-btn">Download JSON</button>
+          <button className="export-btn">Export Figma</button>
         </div>
       </div>
     </div>

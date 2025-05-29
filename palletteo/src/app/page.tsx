@@ -1,3 +1,4 @@
+// src/app/page.tsx (Updated with Entries)
 "use client";
 import { useState, useEffect } from "react";
 import TopNav from "./components/TopNav";
@@ -5,12 +6,15 @@ import LeftNav from "./components/LeftNav";
 import RightNav from "./components/RightNav";
 import PaletteEditor from "./components/PaletteEditor";
 import StyleGuideViewer from "./components/StyleGuideViewer";
+import EntryManager from "./components/EntryManager";
 import DatabaseConnectionForm from "./components/DatabaseConnectionForm";
 import { databaseManager } from "./lib/database/database-manager";
 import { DatabaseConnection } from "./lib/database/types";
 
 export default function PalletteoApp() {
-  const [activeView, setActiveView] = useState<"editor" | "viewer">("editor");
+  const [activeView, setActiveView] = useState<"editor" | "viewer" | "entries">(
+    "editor"
+  );
   const [currentConnection, setCurrentConnection] =
     useState<DatabaseConnection | null>(null);
   const [loading, setLoading] = useState(true);
@@ -91,15 +95,32 @@ export default function PalletteoApp() {
     return <DatabaseConnectionForm onConnected={handleDatabaseConnected} />;
   }
 
+  const renderMainContent = () => {
+    switch (activeView) {
+      case "editor":
+        return <PaletteEditor />;
+      case "entries":
+        return <EntryManager />;
+      case "viewer":
+        return <StyleGuideViewer />;
+      default:
+        return <PaletteEditor />;
+    }
+  };
+
   // Show main application
   return (
     <div className="palletteo-app">
       <TopNav activeView={activeView} setActiveView={setActiveView} />
 
       <div className="app-layout">
-        <LeftNav />
+        {activeView !== "entries" && <LeftNav />}
 
-        <main className="main-content">
+        <main
+          className={`main-content ${
+            activeView === "entries" ? "full-width" : ""
+          }`}
+        >
           <div className="connection-indicator">
             <span className="connection-status">
               📊 Connected to {currentConnection.name} ({currentConnection.type}
@@ -107,10 +128,10 @@ export default function PalletteoApp() {
             </span>
           </div>
 
-          {activeView === "editor" ? <PaletteEditor /> : <StyleGuideViewer />}
+          {renderMainContent()}
         </main>
 
-        <RightNav />
+        {activeView !== "entries" && <RightNav />}
       </div>
     </div>
   );

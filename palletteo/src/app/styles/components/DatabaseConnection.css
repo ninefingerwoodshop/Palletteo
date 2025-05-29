@@ -268,58 +268,46 @@
     padding: 1rem;
     margin: 1rem;
   }
-
   .database-types {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 0.75rem;
   }
-
   .database-type {
     padding: 1rem;
   }
-
   .database-icon {
     font-size: 1.5rem;
   }
-
   .database-name {
     font-size: 0.9rem;
   }
-
   .form-row {
     grid-template-columns: 1fr;
     gap: 0.75rem;
   }
-
   .form-actions {
     flex-direction: column;
   }
-
   .connection-details {
     padding: 1.5rem;
   }
 }
-
 @media (max-width: 480px) {
   .form-header h1 {
     font-size: 2rem;
   }
-
   .form-header p {
     font-size: 1rem;
   }
-
   .database-types {
     grid-template-columns: 1fr 1fr;
   }
 }
-
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   .database-info {
     background: rgba(79, 70, 229, 0.1);
   }
-
   .coming-soon {
     color: rgba(255, 255, 255, 0.6);
   }
