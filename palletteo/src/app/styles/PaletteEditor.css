@@ -1,0 +1,223 @@
+/* src/app/styles/PaletteEditor.css */
+.palletteo-app {
+  min-height: 100vh;
+  background: var(--background);
+}
+
+.app-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr 280px;
+  min-height: calc(100vh - 60px);
+}
+
+.main-content {
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+/* Palette Editor */
+.palette-editor {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.editor-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.palette-name-input {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--foreground);
+  background: transparent;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.palette-name-input:hover,
+.palette-name-input:focus {
+  background: var(--border-color);
+  outline: none;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Color Grid */
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.color-card {
+  background: var(--background);
+  border: 2px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.color-card:hover {
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.color-card.selected {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+.color-swatch {
+  width: 100%;
+  height: 80px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.color-info {
+  position: relative;
+}
+
+.color-name {
+  width: 100%;
+  font-weight: 500;
+  color: var(--foreground);
+  background: transparent;
+  border: none;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.color-name:hover,
+.color-name:focus {
+  outline: none;
+  border-bottom-color: var(--border-color);
+}
+
+.color-hex {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.color-hex input[type="color"] {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.color-hex span {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.remove-color {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #ef4444;
+  color: white;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  line-height: 1;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.color-card:hover .remove-color {
+  opacity: 1;
+}
+
+.remove-color:hover {
+  background: #dc2626;
+}
+
+/* Color Details Sidebar */
+.color-details {
+  position: fixed;
+  right: 2rem;
+  top: 120px;
+  width: 280px;
+  background: var(--background);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.color-details h3 {
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.color-preview {
+  width: 100%;
+  height: 80px;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.color-contrast-text {
+  color: white;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.color-values {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.color-description {
+  width: 100%;
+  min-height: 80px;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter);
+  resize: vertical;
+}
+
+.color-description:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+/* src/app/styles/StyleGuideViewer.css */

@@ -1,0 +1,127 @@
+:root {
+  --font-inter: Inter, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --background: #ffffff;
+  --foreground: #171717;
+  --border-color: #e5e5e5;
+  --accent-color: #4f46e5;
+  --accent-hover: #4338ca;
+  --muted: #6b7280;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --border-color: #2a2a2a;
+    --accent-color: #6366f1;
+    --accent-hover: #4338ca;
+    --muted: #9ca3af;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-inter);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* Layout Styles */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+}
+
+.content-area {
+  flex: 1;
+  padding: 2rem;
+  overflow-y: auto;
+}
+
+.welcome-section {
+  max-width: 600px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.welcome-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.welcome-section p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.quick-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.action-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  font-family: var(--font-inter);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-button.primary {
+  background: var(--accent-color);
+  color: white;
+}
+
+.action-button.primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+.action-button.secondary {
+  background: transparent;
+  color: var(--foreground);
+  border: 1px solid var(--border-color);
+}
+
+.action-button.secondary:hover {
+  background: var(--border-color);
+}
